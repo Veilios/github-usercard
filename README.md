@@ -22,24 +22,24 @@ In this project we are going to be accessing the GitHub API and building a socia
 
 **Follow these steps to set up and work on your project:**
 
-* [ ] Create a forked copy of this project.
-* [ ] Add your team lead as collaborator on Github.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [Done] Create a forked copy of this project.
+* [Done] Add your team lead as collaborator on Github.
+* [Done] Clone your OWN version of the repository (Not Lambda's by mistake!).
+* [Done] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [Done] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [Done] Push commits: git push origin `<firstName-lastName>`.
 
 **Follow these steps for completing your project.**
 
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
-* [ ] Add your team lead as a reviewer on the pull-request.
-* [ ] Your team lead will count the project as complete by merging the branch back into `main` branch.
+* [Done] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+* [Done] Add your team lead as a reviewer on the pull-request.
+* [Done] Your team lead will count the project as complete by merging the branch back into `main` branch.
 
 ### Project Setup
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
+* [Done] Navigate to the root of the project with your command line.
+* [Done] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [Done] Run `npm start` to compile your project and launch a development server.
 
 ### Axios Setup
 
@@ -50,9 +50,9 @@ In this project we are going to be accessing the GitHub API and building a socia
 
 #### Option 2 (installing Axios with npm)
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install axios` to download the dependency (it will be added to the `package.json` file).
-* [ ] At the top of the `GitHubCard/index.js` file, type `import axios from 'axios';`
+* [Done] Navigate to the root of the project with your command line.
+* [Done] Run `npm install axios` to download the dependency (it will be added to the `package.json` file).
+* [Done] At the top of the `GitHubCard/index.js` file, type `import axios from 'axios';`
 
 ### Part 1: Requesting Data from the GitHub API
 
