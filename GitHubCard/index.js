@@ -58,7 +58,7 @@ const followersArray = [];
     </div>
 */
 
-const cardMaker = () => {
+const cardMaker = (data) => {
 const card = document.createElement('div');
 const cardImg = document.createElement('img');
 const cardInfo = document.createElement('div');
@@ -82,7 +82,23 @@ cardInfo.appendChild(followers);
 cardInfo.appendChild(following);
 cardInfo.appendChild(bio);
 
+card.classList.add('card');
+cardInfo.classList('card-info');
+cardName.classList.add('name');
+username.classList.add('username');
 
+cardImg.src = data.avatar_url;
+cardName.textContent = data.name;
+username.textContent = data.login;
+location.textContent = `Location: ${data.location}`;
+profile.textContent = "Profile: ";
+profileLink.href = data.html_url;
+profileLink.textContent = data.html_url;
+followers.textContent = data.followers;
+following.textContent = data.following;
+bio.textContent = `Bio: ${data.bio}`;
+
+return card;
 };
 
 /*
