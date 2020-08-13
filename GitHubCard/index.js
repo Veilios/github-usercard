@@ -5,9 +5,15 @@ import axios from 'axios';
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
+const entryDiv = document.querySelector('.cards');
+let axArray = [];
+
 axios.get(`https://api.github.com/users/Veilios`)
 .then((res) => {
-  console.log(res.data);
+  //console.log(res.data);
+  axArray = res.data;
+  console.log(axArray);
+  entryDiv.append(cardMaker(axArray));
 }).catch((err) => {
   console.log(`Error: ${err}`);
 });
@@ -18,6 +24,51 @@ axios.get(`https://api.github.com/users/Veilios`)
 
     Skip to STEP 3.
 */
+
+
+const cardMaker = (data) => {
+  const card = document.createElement('div');
+  const cardImg = document.createElement('img');
+  const cardInfo = document.createElement('div');
+  const cardName = document.createElement('h3');
+  const username = document.createElement('p');
+  const location = document.createElement('p');
+  const profile = document.createElement('p');
+  const profileLink = document.createElement('a');
+  const followers = document.createElement('p');
+  const following = document.createElement('p');
+  const bio = document.createElement('p');
+  
+  card.appendChild(cardImg);
+  card.appendChild(cardInfo);
+  cardInfo.appendChild(cardName);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.appendChild(profileLink);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+  
+  card.classList.add('card');
+  cardInfo.classList.add('card-info');
+  cardName.classList.add('name');
+  username.classList.add('username');
+  
+  cardImg.src = data.avatar_url;
+  cardName.textContent = data.name;
+  username.textContent = data.login;
+  location.textContent = `Location: ${data.location}`;
+  profile.textContent = "Profile: ";
+  profileLink.href = data.html_url;
+  profileLink.textContent = data.html_url;
+  followers.textContent = `Followers: ${data.followers}`;
+  following.textContent = `Following: ${data.following}`;
+  bio.textContent = `Bio: ${data.bio}`;
+  
+  return card;
+  };
+  
 
 /*
   STEP 4: Pass the data received from Github into your function,
@@ -57,49 +108,6 @@ const followersArray = [];
       </div>
     </div>
 */
-
-const cardMaker = (data) => {
-const card = document.createElement('div');
-const cardImg = document.createElement('img');
-const cardInfo = document.createElement('div');
-const cardName = document.createElement('h3');
-const username = document.createElement('p');
-const location = document.createElement('p');
-const profile = document.createElement('p');
-const profileLink = document.createElement('a');
-const followers = document.createElement('p');
-const following = document.createElement('p');
-const bio = document.createElement('p');
-
-card.appendChild(cardImg);
-card.appendChild(cardInfo);
-cardInfo.appendChild(cardName);
-cardInfo.appendChild(username);
-cardInfo.appendChild(location);
-cardInfo.appendChild(profile);
-profile.appendChild(profileLink);
-cardInfo.appendChild(followers);
-cardInfo.appendChild(following);
-cardInfo.appendChild(bio);
-
-card.classList.add('card');
-cardInfo.classList('card-info');
-cardName.classList.add('name');
-username.classList.add('username');
-
-cardImg.src = data.avatar_url;
-cardName.textContent = data.name;
-username.textContent = data.login;
-location.textContent = `Location: ${data.location}`;
-profile.textContent = "Profile: ";
-profileLink.href = data.html_url;
-profileLink.textContent = data.html_url;
-followers.textContent = data.followers;
-following.textContent = data.following;
-bio.textContent = `Bio: ${data.bio}`;
-
-return card;
-};
 
 /*
   List of LS Instructors Github username's:
